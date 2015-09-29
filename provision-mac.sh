@@ -14,7 +14,9 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install essentials
-brew install git hub node
+brew install git hub bash-completion
+
+# brew install apple-gcc42
 
 # Install Homebrew Cask
 brew install caskroom/cask/brew-cask
@@ -22,8 +24,16 @@ brew install caskroom/cask/brew-cask
 # Install binary apps
 brew cask install \
   google-chrome firefox \
-  skype dropbox spotify asepsis \
-  phpstorm atom virtualbox vagrant sqlitebrowser
+  skype dropbox spotify asepsis karabiner \
+  java phpstorm atom virtualbox vagrant sqlitebrowser
+
+
+# Install Node
+brew install nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+nvm install 0.12
 
 # Install CLI apps from NPM
 npm i -g gulp bower http-server mocha node-inspector

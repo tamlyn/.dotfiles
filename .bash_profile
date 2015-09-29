@@ -1,4 +1,8 @@
 export PATH="/usr/local/sbin:$PATH"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+source ~/.dotfiles/private.sh
 
 # source Homebrew Bash completions
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
