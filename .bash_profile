@@ -1,7 +1,14 @@
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH:~/.bin"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=/usr/local/opt/go/libexec
+export EDITOR=nano
+
+# Node.js
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+#source <(npm completion)
 
+# Extra env vars
 source ~/.dotfiles/private.sh
 
 # source Homebrew Bash completions
@@ -19,10 +26,24 @@ alias ...="cd ../.."
 alias git=hub
 
 # create directory and cd to it
-mkcd ()
-{
+mkcd () {
     mkdir -p -- "$1" &&
       cd -P -- "$1"
+}
+
+# Switch docker pointer to another host (dmenv my_remote_host)
+dmenv () {
+  eval "$(docker-machine env ${1:-default})"
+}
+
+# Find running processes matching search
+psg () {
+  ps aux | { head -1; grep --color=auto -i $1; }
+}
+
+# Show process listening on a port
+port () {
+  lsof -ni:$1 | (read header; echo "$header"; grep LISTEN;)
 }
 
 # display local or remote IP address

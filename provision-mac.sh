@@ -14,32 +14,42 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install essentials
-brew install git hub bash-completion
+brew install git hub bash-completion composer
 
 # brew install apple-gcc42
 
 # Install Homebrew Cask
-brew install caskroom/cask/brew-cask
+brew install caskroom/cask/brew-cask brew-cask-completion
 
 # Install binary apps
 brew cask install \
-  google-chrome firefox \
-  skype dropbox spotify asepsis karabiner \
+  google-chrome firefox acorn utorrent flycut \
+  skype dropbox spotify sonos karabiner jitouch scroll-reverser cyberduck \
   java phpstorm atom virtualbox vagrant sqlitebrowser
 
+# Tweak PhpStorm memory
+mkdir -p ~/Library/Preferences/WebIde10/
+# ... todo
+
+brew install redis mongodb openssl
 
 # Install Node
 brew install nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+nvm install 4
 
-nvm install 0.12
+# npm bash completions
+npm completion > /usr/local/etc/bash_completion.d/npm
 
 # Install CLI apps from NPM
 npm i -g gulp bower http-server mocha node-inspector
 
 # Load customised key map
 ./karabiner.sh
+
+# Add key to SSH agent
+/usr/bin/ssh-add -K ~/.ssh/id_rsa
 
 # Disable the sound effects on boot
 #sudo nvram SystemAudioVolume=" "
@@ -60,6 +70,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Use F1-12 keys as normal
+defaults write -g com.apple.keyboard.fnState -bool true 
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -84,4 +97,4 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 chflags nohidden ~/Library
 
 # Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 28
