@@ -14,12 +14,9 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install essentials
-brew install git hub bash-completion composer
+brew install git hub bash-completion brew-cask-completion composer
 
 # brew install apple-gcc42
-
-# Install Homebrew Cask
-brew install caskroom/cask/brew-cask brew-cask-completion
 
 # Install binary apps
 brew cask install \
@@ -72,7 +69,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use F1-12 keys as normal
-defaults write -g com.apple.keyboard.fnState -bool true 
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -92,6 +89,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+# Don't make cursor bigger when it moves fast
+defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool YES
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
