@@ -14,7 +14,7 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install essentials
-brew install git hub bash-completion brew-cask-completion composer
+brew install git hub bash-completion homebrew/completions/brew-cask-completion
 
 # brew install apple-gcc42
 
@@ -28,7 +28,7 @@ brew cask install \
 mkdir -p ~/Library/Preferences/WebIde10/
 # ... todo
 
-brew install redis mongodb openssl
+brew install redis mongodb openssl composer
 
 # Install Node
 brew install nvm
