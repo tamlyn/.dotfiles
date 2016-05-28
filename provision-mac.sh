@@ -98,3 +98,6 @@ chflags nohidden ~/Library
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 28
+
+# Put dock on left
+defaults write com.apple.Dock orientation -string left
