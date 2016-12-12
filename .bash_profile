@@ -5,11 +5,14 @@ export EDITOR=nano
 
 # Node.js
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-#source <(npm completion)
+# hack to delay loading nvm until first use of node
+alias node='unalias node npm; source $(brew --prefix nvm)/nvm.sh; source <(npm completion); node $@'
+alias npm='unalias node npm; source $(brew --prefix nvm)/nvm.sh; source <(npm completion); npm $@'
 
 # Extra env vars
-source ~/.dotfiles/private.sh
+if [ -f ~/.dotfiles/private.sh ]; then
+    . ~/.dotfiles/private.sh
+fi
 
 # source Homebrew Bash completions
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
