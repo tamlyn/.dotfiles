@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Ask for the administrator password upfront
-#sudo -v
+sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until script has finished
-#while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Homebrew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -29,11 +29,11 @@ git clone https://github.com/tamlyn/.dotfiles.git .dotfiles
 cd .dotfiles
 
 # Symlink dotfiles
-ln -s ./.gitconfig ~/.gitconfig
-ln -s ./.gitignore ~/.gitignore
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.gitignore ~/.gitignore
 
 mkdir -p ~/.config
-ln -s ./fish ~/.config/fish
-ln -s .config/karabiner ~/.config/karabiner
+ln -s ~/.dotfiles/.config/fish ~/.config/fish
+ln -s ~/.dotfiles/.config/karabiner ~/.config/karabiner
 
 ./macos-settings.sh
