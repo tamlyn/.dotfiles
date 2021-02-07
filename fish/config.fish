@@ -1,20 +1,26 @@
 set --export EDITOR micro
-set -gx PATH $HOME/.cargo/bin $HOME/opt/bin $PATH
 
 thefuck --alias | source
+
+eval (direnv hook fish)
 
 alias ls="ls -laFGog"
 alias watch="watch -ctn1"
 
-status --is-interactive; and source (rbenv init -|psub)
+#source /usr/local/anaconda3/etc/fish/conf.d/conda.fish
+#set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
+
+#status --is-interactive; and source (rbenv init -|psub)
+#status --is-interactive; and . (pyenv init -|psub)
 
 set __fish_git_prompt_color_branch yellow
 set __fish_git_prompt_color_upstream_ahead green
 set __fish_git_prompt_color_upstream_behind red
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish ]; and . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish ]; and . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
+#set -g fish_user_paths "/usr/local/opt/php@7.4/bin" $fish_user_paths
+#set -g fish_user_paths "/usr/local/opt/php@7.4/sbin" $fish_user_paths
+# ghcup-env
+#set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+#test -f /Users/tamlyn/.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /Users/tamlyn/.ghcup/bin $PATH

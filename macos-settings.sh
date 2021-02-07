@@ -21,7 +21,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use F1-12 keys as normal
-defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+#defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -48,8 +48,8 @@ defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationM
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
-# Set the icon size of Dock items to 36 pixels
+# Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 28
 
 # Put dock on left
-defaults write com.apple.Dock orientation -string left
+#defaults write com.apple.Dock orientation -string left

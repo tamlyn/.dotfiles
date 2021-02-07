@@ -20,8 +20,19 @@
     untracked = cyan
 [push]
 	default = current
+[pull]
+	ff = only
 [core]
 	autocrlf = input
+	excludesfile = /Users/tamlyn/.gitignore
 [alias]
 	s = status
 	lg = log --all --decorate --oneline --graph
+	cleanup = !git branch --merged master | grep -v master | grep -v develop | xargs git branch -d
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

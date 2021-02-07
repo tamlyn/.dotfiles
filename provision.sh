@@ -6,43 +6,34 @@
 # Keep-alive: update existing `sudo` time stamp until script has finished
 #while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Symlink dotfiles
-ln -s ./.bash_profile ~/.bash_profile
-ln -s ./.gitconfig ~/.gitconfig
-
-mkdir -p ~/.config
-ln -s ./fish ~/.config/fish
-
 # Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Install essentials
 brew install git bash-completion homebrew/completions/brew-cask-completion
 
-# brew install apple-gcc42
-
 # Install binary apps
-brew cask install \
-  google-chrome firefox acorn flycut \
-  skype dropbox spotify karabiner-elements jitouch scroll-reverser cyberduck \
-  java phpstorm atom virtualbox docker toggl-desktop \
-  spectacle microsoft-office iterm2
+brew install --cask \
+  google-chrome firefox acorn \
+  dropbox spotify karabiner-elements cyberduck \
+  docker toggl-track iterm2 visual-studio-code bettertouchtool intellij-idea zoomus \
+  supercollider
 
 brew install \
-    redis mongodb postgresql \
-    composer n micro fish \
-    openssl fzf thefuck watch pstree
+    micro fish openssl thefuck watch pstree git-lfs autojump awscli direnv ffmpeg imagemagick jq tree unzip
 
-# install node
-n lts
+cd ~
 
-# npm bash completions
-npm completion > /usr/local/etc/bash_completion.d/npm
+git clone https://github.com/tamlyn/.dotfiles.git .dotfiles
 
-# Install CLI apps from NPM
-npm i -g yarn
+cd .dotfiles
 
-# Add key to SSH agent
-/usr/bin/ssh-add -K ~/.ssh/id_rsa
+# Symlink dotfiles
+ln -s ./.gitconfig ~/.gitconfig
+ln -s ./.gitignore ~/.gitignore
+
+mkdir -p ~/.config
+ln -s ./fish ~/.config/fish
+ln -s .config/karabiner ~/.config/karabiner
 
 ./macos-settings.sh
