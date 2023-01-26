@@ -19,6 +19,15 @@ set __fish_git_prompt_color_upstream_behind red
 
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
+source (brew --prefix asdf)/libexec/asdf.fish
+
+set --export ANDROID $HOME/Library/Android;
+set --export ANDROID_HOME $ANDROID/sdk;
+set -gx PATH $ANDROID_HOME/tools $PATH;
+set -gx PATH $ANDROID_HOME/tools/bin $PATH;
+set -gx PATH $ANDROID_HOME/platform-tools $PATH;
+set -gx PATH $ANDROID_HOME/emulator $PATH
+
 #set -g fish_user_paths "/usr/local/opt/php@7.4/bin" $fish_user_paths
 #set -g fish_user_paths "/usr/local/opt/php@7.4/sbin" $fish_user_paths
 # ghcup-env

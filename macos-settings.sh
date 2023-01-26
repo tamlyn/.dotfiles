@@ -49,7 +49,15 @@ defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationM
 chflags nohidden ~/Library
 
 # Set the icon size of Dock items
-defaults write com.apple.dock tilesize -int 28
+defaults write com.apple.dock tilesize -int 36
 
 # Put dock on left
 #defaults write com.apple.Dock orientation -string left
+
+# Reduce key repeat delay
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
+
+# Uncheck Automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+

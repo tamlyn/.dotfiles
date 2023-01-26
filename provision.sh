@@ -7,33 +7,35 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Homebrew
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install essentials
-brew install git bash-completion homebrew/completions/brew-cask-completion
+brew install git
 
 # Install binary apps
 brew install --cask \
-  google-chrome firefox acorn \
+  google-chrome acorn \
   dropbox spotify karabiner-elements cyberduck \
-  docker toggl-track iterm2 visual-studio-code bettertouchtool intellij-idea zoomus \
-  supercollider
+  docker iterm2 visual-studio-code bettertouchtool intellij-idea \
+  keybase microsoft-excel ableton-live-suite
 
 brew install \
-    micro fish openssl thefuck watch pstree git-lfs autojump awscli direnv ffmpeg imagemagick jq tree unzip
+    micro fish openssl thefuck watch pstree git-lfs git-crypt autojump awscli direnv \
+    ffmpeg imagemagick jq tree unzip asdf
 
-cd ~
-
-git clone https://github.com/tamlyn/.dotfiles.git .dotfiles
-
-cd .dotfiles
+git clone https://github.com/tamlyn/.dotfiles.git ~/.dotfiles
 
 # Symlink dotfiles
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/.gitignore ~/.gitignore
-
 mkdir -p ~/.config
 ln -s ~/.dotfiles/.config/fish ~/.config/fish
 ln -s ~/.dotfiles/.config/karabiner ~/.config/karabiner
 
-./macos-settings.sh
+~/.dotfiles/macos-settings.sh
+
+# add fish as a valid shell
+echo $(which fish) | sudo tee -a /etc/shells
+
+# set fish to be the default shell
+chsh -s /usr/local/bin/fish

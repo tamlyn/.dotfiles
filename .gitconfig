@@ -28,7 +28,8 @@
 [alias]
 	s = status
 	lg = log --all --decorate --oneline --graph
-	cleanup = !git branch --merged master | grep -v master | grep -v develop | xargs git branch -d
+	cleanup-master = !git branch --merged master | grep -v master | grep -v develop | xargs git branch -d
+	cleanup-main = !git branch --merged main | grep -v main | grep -v develop | xargs git branch -d
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
