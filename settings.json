@@ -1,36 +1,33 @@
 {
-    "git.enableSmartCommit": true,
-    "files.autoSave": "onFocusChange",
-    "files.associations": {
-        "*.tidal": "haskell"
-    },
-    "explorer.confirmDelete": false,
-    "npm.enableScriptExplorer": true,
-    "editor.tabSize": 2,
-    "explorer.confirmDragAndDrop": false,
-    "ai.homepage.openOnStartup": false,
-    "jupyter.appendResults": false,
-    "python.linting.pylintArgs": [
-        "--errors-only",
-        "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
-        ],
-        "workbench.colorTheme": "Default Light+",
-        "editor.minimap.enabled": false,
-        "files.eol": "\n",
-        "ruby.intellisense": "rubyLocate",
-        "tidalcycles.sounds.paths": [
-            "/Users/tamlyn/Library/Application Support/SuperCollider/downloaded-quarks/Dirt-Samples"
-        ],
-        "workbench.activityBar.visible": true,
-        "liveshare.featureSet": "insiders",
-        "jupyter.sendSelectionToInteractiveWindow": true,
-        "redhat.telemetry.enabled": true,
-        "security.workspace.trust.untrustedFiles": "open",
-        "[json]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "modificationsIfAvailable",
-        "git.autofetch": true,
-        "workbench.editor.wrapTabs": true
+  "git.enableSmartCommit": true,
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "*.tidal": "haskell"
+  },
+  "explorer.confirmDelete": false,
+  "npm.enableScriptExplorer": true,
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "ai.homepage.openOnStartup": false,
+  "jupyter.appendResults": false,
+  "python.linting.pylintArgs": [
+    "--errors-only",
+    "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
+  ],
+  "workbench.colorTheme": "Default Light+",
+  "editor.minimap.enabled": false,
+  "files.eol": "\n",
+  "ruby.intellisense": "rubyLocate",
+  "workbench.activityBar.visible": true,
+  "liveshare.featureSet": "insiders",
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "redhat.telemetry.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "git.autofetch": true,
+  "workbench.editor.wrapTabs": true
 }
