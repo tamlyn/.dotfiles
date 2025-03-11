@@ -14,14 +14,50 @@ brew install git
 
 # Install binary apps
 brew install --cask \
-  google-chrome acorn \
-  dropbox spotify karabiner-elements cyberduck \
-  docker iterm2 visual-studio-code bettertouchtool intellij-idea \
-  keybase microsoft-excel ableton-live-suite
+  ableton-live-suite \
+  cyberduck \
+  disk-inventory-x \
+  docker \
+  google-chrome \
+  iterm2 \
+  karabiner-elements \
+  keybase \
+  maccy \
+  microsoft-excel \
+  middleclick \
+  neardrop \
+  ngrok \
+  notunes \
+  pycharm-ce \
+  spotify \
+  steam \
+  visual-studio-code \
+  vlc \
+  webstorm 
 
 brew install \
-    micro fish openssl thefuck watch pstree git-lfs git-crypt autojump awscli direnv \
-    ffmpeg imagemagick jq tree unzip asdf
+    asdf \
+    autojump \
+    awscli \
+    direnv \
+    ffmpeg \
+    fish \
+    fx \
+    gh \
+    git-crypt \
+    git-lfs \
+    imagemagick \
+    jq \
+    micro \
+    openssl \
+    postgresql \
+    pstree \
+    thefuck \
+    tree \
+    unrar \
+    unzip \
+    watch \
+    watchman
 
 git clone https://github.com/tamlyn/.dotfiles.git ~/.dotfiles
 
