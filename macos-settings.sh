@@ -61,3 +61,6 @@ defaults write -g KeyRepeat -int 2
 # Uncheck Automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Disable Cmd-M shortcut
+defaults write -g NSUserKeyEquivalents -dict-add 'Minimize' '\0'
+defaults write -g NSUserKeyEquivalents -dict-add 'Minimise' '\0'

@@ -38,4 +38,4 @@ ln -s ~/.dotfiles/.config/karabiner ~/.config/karabiner
 echo $(which fish) | sudo tee -a /etc/shells
 
 # set fish to be the default shell
-chsh -s /usr/local/bin/fish
+chsh -s $(which fish)
