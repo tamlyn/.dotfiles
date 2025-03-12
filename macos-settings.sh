@@ -51,8 +51,8 @@ chflags nohidden ~/Library
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 36
 
-# Put dock on left
-#defaults write com.apple.Dock orientation -string left
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
 
 # Reduce key repeat delay
 defaults write -g InitialKeyRepeat -int 15

@@ -9,55 +9,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install Homebrew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# Add Homebrew to PATH for Zsh
+echo >> /Users/tamlyn/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/tamlyn/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Install essentials
 brew install git
-
-# Install binary apps
-brew install --cask \
-  ableton-live-suite \
-  cyberduck \
-  disk-inventory-x \
-  docker \
-  google-chrome \
-  iterm2 \
-  karabiner-elements \
-  keybase \
-  maccy \
-  microsoft-excel \
-  middleclick \
-  neardrop \
-  ngrok \
-  notunes \
-  pycharm-ce \
-  spotify \
-  steam \
-  visual-studio-code \
-  vlc \
-  webstorm 
-
-brew install \
-    asdf \
-    autojump \
-    awscli \
-    direnv \
-    ffmpeg \
-    fish \
-    fx \
-    gh \
-    git-crypt \
-    git-lfs \
-    imagemagick \
-    jq \
-    micro \
-    openssl \
-    postgresql \
-    pstree \
-    thefuck \
-    tree \
-    unrar \
-    unzip \
-    watch \
-    watchman
 
 git clone https://github.com/tamlyn/.dotfiles.git ~/.dotfiles
 
@@ -75,3 +33,8 @@ echo $(which fish) | sudo tee -a /etc/shells
 
 # set fish to be the default shell
 chsh -s $(which fish)
+
+brew install --cask google-chrome
+
+xargs brew install < brew-packages.txt
+xargs brew install --cash < brew-casks.txt

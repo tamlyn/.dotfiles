@@ -14,11 +14,13 @@
     "--errors-only",
     "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
   ],
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Webstorm New Light with Dark Header",
   "editor.minimap.enabled": false,
   "files.eol": "\n",
   "ruby.intellisense": "rubyLocate",
-  "workbench.activityBar.visible": true,
+  "tidalcycles.sounds.paths": [
+    "/Users/tamlyn/Library/Application Support/SuperCollider/downloaded-quarks/Dirt-Samples"
+  ],
   "liveshare.featureSet": "insiders",
   "jupyter.sendSelectionToInteractiveWindow": true,
   "redhat.telemetry.enabled": true,
@@ -27,7 +29,33 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "git.autofetch": true,
-  "workbench.editor.wrapTabs": true
+  "workbench.editor.wrapTabs": true,
+  "vslilypond.compilation.compileMainFileOnSave": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": "always",
+    "source.fixAll.eslint": "always"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools"
+  },
+  "sqltools.results.reuseTabs": "connection",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.rebaseWhenSync": true,
+  "git.allowForcePush": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 12,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot"
 }
